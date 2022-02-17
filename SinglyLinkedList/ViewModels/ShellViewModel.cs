@@ -10,10 +10,11 @@ namespace SinglyLinkedList.ViewModels
 {
     public class ShellViewModel : Screen
     {
-        private LinkedListModel linkedList = new LinkedListModel();
-        private BindableCollection<Item> items = new BindableCollection<Item>();
         private int number;
         private int m;
+        private string answer;
+        private LinkedListModel linkedList = new LinkedListModel();
+        private BindableCollection<Item> items = new BindableCollection<Item>();
 
         public int M
         {
@@ -32,8 +33,6 @@ namespace SinglyLinkedList.ViewModels
                 NotifyOfPropertyChange(() => Number);
             }
         }
-
-        private string answer;
 
         public string Answer
         {
@@ -68,10 +67,6 @@ namespace SinglyLinkedList.ViewModels
 
         public void AddNumberToLinkedList(int number)
         {
-            if (LinkedList.IsEmpty())
-            {
-                Items = new BindableCollection<Item>();
-            }
             LinkedList.Add(number);
             Items.Add(new Item {CurrentItem = number });
             
@@ -79,15 +74,12 @@ namespace SinglyLinkedList.ViewModels
             Answer = "";
         }
 
-        public bool CanAddNumberToLinkedList(int number) => number != 0;
-
         public void MthNumber(int m)
         {
             Answer = LinkedList.ReturnMthFromLast(m);
             M = 0;
             LinkedList = new LinkedListModel();
+            Items = new BindableCollection<Item>();
         }
-
-        public bool CanMthNumber(int m) => Items.Count > 0;
     }
 }
