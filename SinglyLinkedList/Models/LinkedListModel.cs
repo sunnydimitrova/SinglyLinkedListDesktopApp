@@ -57,8 +57,6 @@ namespace SinglyLinkedList.Models
                 return "Invalid data.";
             }
         }
-
-        public bool IsEmpty() => head == null;
        
     }
 }
