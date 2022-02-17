@@ -48,7 +48,6 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <!--<ListBox x:Name="Items" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="2"/>-->
 
         <!--Row 4-->
         <Label Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">Number:</Label>
